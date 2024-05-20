@@ -1,0 +1,8 @@
+/*Uncut Sans Font Family*/
+
+@font-face {
+font-family: 'Uncut Sans';
+src: url('../src/font/uncut-sans/Uncut-Sans-VF.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
