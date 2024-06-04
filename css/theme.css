@@ -12,7 +12,7 @@ html {
     font-family: var(--font);
     font-size: 16px;
     color: var(--main-color);
-    background-color: var(--bg-color);
+    background-color: transparent;
 }
 
 a,
@@ -38,7 +38,7 @@ h2 {
 h3,
 h4,
 h5 {
-    font-size: 18px;
+    font-size: 17px;
     font-family: var(--font);
     color: var(--main-color);
 }
@@ -46,7 +46,9 @@ h5 {
 p,
 li,
 dt,
-dd {
+dd,
+span,
+time {
     font-family: var(--font);
     color: var(--main-color);
 }
@@ -70,6 +72,8 @@ footer {
     padding: 20px;
     border-top: 1px dashed var(--main-color);
     background-color: var(--bg-color);
+    position: absolute;
+    width: 100%;
     z-index: 99999;
 }
 
@@ -78,14 +82,15 @@ footer dl {
     display: table;
 }
 
-footer dt, footer dd {
+footer dt,
+footer dd {
     display: table-cell;
     vertical-align: top;
     padding-left: 15px;
 }
 
 nav {
-    padding:3px 0px 5px;
+    padding: 3px 0px 5px;
 
 }
 
@@ -94,7 +99,7 @@ nav ul li {
 }
 
 main {
-    padding: 80px 50px 50px;
+    padding: 50px;
 }
 
 section {
@@ -114,7 +119,7 @@ figure figcaption {
 
 aside {
     position: fixed;
-    width:  calc(25% - 25px);
+    width: calc(25% - 25px);
     height: 100%;
     padding-top: 70px;
     padding-right: 25px;
@@ -123,12 +128,26 @@ aside {
     z-index: 9998;
 }
 
+span {
+    background-color: var(--sec-color);
+    padding: 5px 10px;
+    margin-right: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+time {
+    font-size: 21px;
+    text-align: right;
+}
+
 .intro-spacer {
     height: 150px;
 }
 
 .sec-spacer {
-    height: 20px;
+    height: 60px;
 }
 
 .sec-cap {
@@ -138,7 +157,7 @@ aside {
 
 .sec-title {
     font-size: 32px;
-    padding-left: 15px;
+    padding-left: 20px;
     margin: 0px;
     position: absolute;
     bottom: -5px;
@@ -148,14 +167,119 @@ aside {
     padding-bottom: 100px;
 }
 
+.portfolio-list a:last-child section {
+    border-bottom: none;
+}
+
 .column {
     border-left: 1px dashed var(--main-color);
-    padding: 0px 20px;
+    padding: 0px 25px;
     height: 100%;
 }
 
-.column h2 {
+.column h1 {
     margin-bottom: 80px;
+}
+
+.column .cell:last-child {
+    margin-bottom: 0px;
+}
+
+.column .sheet:last-child {
+    margin-bottom: 0px;
+}
+
+.cell {
+    margin-bottom: 50px;
+}
+
+.cell-date {
+    text-align: right;
+}
+
+.sheet {
+    box-sizing: content-box;
+    width: 100%;
+    padding: 15px;
+    margin-left: -15px;
+    margin-bottom: 60px;
+}
+
+.sheet:has(.show) {
+    background-color: var(--sec-color);
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+.sheet span {
+    background-color: var(--bg-color);
+}
+
+.sheet .toggle-but:after {
+    content: '× fechar';
+}
+
+.sheet .collapsed .toggle-but:after {
+    content: '+ ver mais';
+}
+
+.sheet .collapsed .toggle-but {
+    background-color: var(--sec-color);
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+.sheet .cell {
+    border-bottom: 1px dashed var(--main-color);
+    margin-bottom: 5px;
+}
+
+.sheet h3 {
+    font-size: 17px;
+}
+
+.sheet h4 {
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+
+.sheet p {
+    font-size: 15px;
+}
+
+.toggle-but {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+.cap {
+    font-size: 10px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.cap-low {
+    text-transform: lowercase;
+}
+
+.cap-upper {
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+.cap-under {
+    border-bottom: 1px dashed var(--main-color);
+    padding-top: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.credit {
+    padding-bottom: 10px;
 }
 
 .img-grid {
@@ -169,42 +293,200 @@ aside {
     border-bottom: 1px dashed var(--main-color);
 }
 
+.dropdown-menu li {
+    padding: 5px 0px;
+}
+
+.dropdown-menu li:hover {
+    background-color: var(--sec-color)
+}
+
+.hidden {
+    display: none;
+}
+
 #brand {
     text-transform: uppercase;
     font-size: 26px;
 }
 
-#brand a{
+#brand a {
     white-space: nowrap;
 }
 
-#brand a:hover{
+#brand a:hover {
     text-decoration: underline;
 }
 
-#menu a{
-    padding-left: 15px;
+#menu a {
+    padding-left: 20px;
 }
 
-#menu a:hover{
+#menu a:hover {
     text-decoration: underline;
 }
 
 #footnote {
     font-size: 12px;
     text-align: right;
-    position: absolute;
-    right: 20px;
-    padding-bottom: 15px;
+    padding-top: 5px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
+
+    footer dt {
+        padding-left: 0;
+    }
+
+    footer dl {
+        padding-bottom: 25px;
+    }
+
+    footer p {
+        padding-bottom: 25px;
+    }
+
+    aside p {
+        font-size: 14px;
+    }
+
+    .img-grid {
+        padding: 15px 0px 150px;
+    }
+
+    .portfolio-list {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    header {
+        padding: 10px 20px;
+        border-bottom: 1px dashed var(--main-color);
+    }
+
+    main {
+        padding: 60px 20px 50px;
+    }
 
     aside {
         display: none;
     }
+
+    footer dt {
+        min-width: 200px;
+    }
+
+    .column {
+        padding: 0px;
+        border: none;
+    }
+
+    .column h1 {
+        padding-bottom: 5px;
+        border-bottom: 1px dashed var(--main-color);
+    }
+
+    .portfolio-list section {
+        padding-top: 40px;
+    }
+
+    .sec-title {
+        position: static;
+        padding-left: 0px;
+        padding-top: 5px;
+        font-size: 28px;
+    }
+
+    .intro-spacer {
+        height: 50px;
+    }
+
+    .sec-spacer {
+        height: 10px;
+    }
+
+    .hidden {
+        display: block;
+    }
     
+    .full-only {
+        display: none;   
+    }
+
+    .accordion-button {
+        color: var(--main-color);
+        padding: 0px 0px 5px;
+        font-size: 28px;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--bg-color);
+        color: var(--main-color);
+        box-shadow: none;  
+    }
+
     #menu {
         display: none;
+    }
+
+    #footnote {
+
+        position: static;
+        border-top: 1px dashed var(--main-color);
+        padding-top: 10px;
+        padding-bottom: 0px;
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) {
+
+    footer dt:after {
+        content: ' →';
+    }
+    
+    .accordion-button {
+        display: none;
+    }
+}
+
+@media (max-height: 700px) {
+
+    aside p {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 650px) {
+
+    aside p {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 600px) {
+
+    aside p {
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 550px) {
+
+    aside p {
+        font-size: 11px;
+    }
+}
+
+@media (max-height: 500px) {
+
+    aside p {
+        font-size: 10px;
     }
 }
