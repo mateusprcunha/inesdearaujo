@@ -107,10 +107,6 @@ section {
     padding: 20px 0px;
 }
 
-figure {
-    padding-top: 20px;
-}
-
 figure figcaption {
     font-family: var(--font);
     font-size: 24px;
@@ -161,6 +157,10 @@ time {
     margin: 0px;
     position: absolute;
     bottom: -5px;
+}
+
+.img-grid figure {
+    padding-top: 20px;
 }
 
 .portfolio-list {
@@ -247,6 +247,80 @@ time {
 
 .sheet p {
     font-size: 15px;
+}
+
+.work-intro {
+    box-sizing: border-box;
+    height: calc(100vh - 120px);
+    text-align: center;
+}
+
+.work-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.work-cover img {
+    max-height: 60vh;
+    width: auto;
+}
+
+.work-desc {
+    padding: 50px;
+}
+
+.work-desc p {
+    margin-bottom: 0px;
+}
+
+.work-list {
+    background-color: var(--bg-color);
+    border-top: 1px dashed var(--main-color);
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.work-photo {
+    height: 400px;
+    max-width: 900px;
+    padding: 0px;
+    margin: 100px auto;
+}
+
+.work-photo img {
+    max-height: 100%;
+    width: auto;
+}
+
+.work-label {
+    border-bottom: 1px dashed var(--main-color);
+    padding-bottom: 3px;
+    text-align: left;
+    min-height: 40px;
+}
+
+.work-label p {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.work-label .mini {
+    font-size: 12px;
+}
+
+.work-flex {
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.work-comp {
+    display: none;
 }
 
 .toggle-but {
@@ -345,10 +419,12 @@ time {
 
     footer dt {
         padding-left: 0;
+        font-family: var(--font);
     }
 
     footer dl {
         padding-bottom: 25px;
+        font-family: var(--font);
     }
 
     footer p {
@@ -366,6 +442,19 @@ time {
     .portfolio-list {
         padding-bottom: 40px;
     }
+
+    .work-label p {
+        font-size: 14px;
+    }
+
+    .work-comp {
+        display: block;
+    }
+
+    .work-full {
+        display: none;
+    }
+
 }
 
 @media (max-width: 991px) {
@@ -404,6 +493,11 @@ time {
         border-bottom: 1px dashed var(--main-color);
     }
 
+    .sheet {
+        padding: 10px;
+        margin-left: -10px;
+    }
+
     .portfolio-list section {
         padding-top: 40px;
     }
@@ -421,6 +515,33 @@ time {
 
     .sec-spacer {
         height: 10px;
+    }
+    
+    .work-intro {
+        height: auto;
+    }
+    
+    .work-cover {
+        position: static;
+        top: 0;
+        left: 0;
+        transform: translate(0%,0%);
+        margin: 60px 0;
+    }
+    
+    .work-cover {
+        width: 100%;
+        height: auto;
+    }
+
+    .work-flex {
+        width: 100%;
+    }
+
+    .work-photo {
+        width: 100%;
+        height: auto;
+        margin: 80px auto;
     }
 
     .hidden {
