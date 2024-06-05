@@ -89,6 +89,11 @@ footer dd {
     padding-left: 15px;
 }
 
+footer dt a {
+    font-family: var(--font);
+}
+
+
 nav {
     padding: 3px 0px 5px;
 
@@ -259,8 +264,8 @@ time {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    
+    transform: translate(-50%, -50%);
+
 }
 
 .work-cover img {
@@ -516,22 +521,26 @@ time {
     .sec-spacer {
         height: 10px;
     }
-    
+
     .work-intro {
         height: auto;
     }
-    
+
     .work-cover {
         position: static;
         top: 0;
         left: 0;
-        transform: translate(0%,0%);
+        transform: translate(0%, 0%);
         margin: 60px 0;
     }
-    
+
     .work-cover {
         width: 100%;
         height: auto;
+    }
+
+    .work-desc {
+        padding: 40px 0px;
     }
 
     .work-flex {
